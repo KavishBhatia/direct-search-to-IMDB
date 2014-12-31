@@ -1,1 +1,1 @@
-python /home/kavi/Desktop/imdb-lookup.py
+python path-to-the-file/imdb-lookup.py
