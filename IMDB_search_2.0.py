@@ -8,7 +8,7 @@ key = "" #enter your api key here from omdb.com
 api = "&apikey="
 omdb = "http://www.omdbapi.com/?t="
 imdb = "https://www.imdb.com/title/"
-
+year_code = "&y="
 
 def getName(name):
     name = name.split()
@@ -23,8 +23,11 @@ def getName(name):
         return(name)
 
 
-def getUrl(name):
-    url = omdb + getName(name) + api + key
+def getUrl(name,year):
+    if len(year) > 0:
+        url = omdb + getName(name) + year_code + year + api + key
+    elif len(year) == 0:
+        url = omdb + getName(name) + api + key
     print(url)
     return(url)
 
@@ -42,13 +45,19 @@ def openUrl(imdbid):
     webbrowser.open(movieurl)
 
 def guibox():
-    name = enterbox("Enter Movie Name")
-    return(name)
+    # name = enterbox("Enter Movie Name")
+    msg = "Enter Movie Name"
+    title = "IMDB Search"
+    fieldNames = ["Movie Name","Year"]
+    Values = []  # we start with blanks for the values
+    Values = multenterbox(msg,title, fieldNames)
+    return Values[0], Values[1]
+    
 
 
 def main():
-    name = guibox()
-    url = getUrl(name)
+    name, year = guibox()
+    url = getUrl(name,year)
     resp,id = getResponse(url)
     
     if resp == "True":
