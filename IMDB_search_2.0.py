@@ -43,7 +43,7 @@ def openUrl(imdbid):
     webbrowser.open(movieurl)
 
 def guibox():
-    name = enterbox("Enter Output File Name")
+    name = enterbox("Enter Movie Name")
     return(name)
 
 
