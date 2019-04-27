@@ -4,7 +4,6 @@ import json
 import webbrowser
 from easygui import *
 
-# name = "manikarnika"
 key = "" #enter your api key here from omdb.com
 api = "&apikey="
 omdb = "http://www.omdbapi.com/?t="
