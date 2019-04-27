@@ -5,7 +5,7 @@ import webbrowser
 from easygui import *
 
 # name = "manikarnika"
-key = "91dc15b4"
+key = "" #enter your api key here from omdb.com
 api = "&apikey="
 omdb = "http://www.omdbapi.com/?t="
 imdb = "https://www.imdb.com/title/"
