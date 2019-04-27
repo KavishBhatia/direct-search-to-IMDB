@@ -10,5 +10,3 @@ libraries needed -
 3. webbrowser
 4. json
 
-TODO:
-add "year" as a new field for search where names of movies are same.
